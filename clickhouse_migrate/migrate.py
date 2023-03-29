@@ -16,7 +16,7 @@ def execute_and_inflate(client, query):
 
 
 def get_connection(db_name, db_host, db_user, db_password, db_port=None):
-  return Client(db_host, port=db_port, user=db_user, password=db_password, database=db_name)
+  return Client(db_host, port=db_port, user=db_user, password=db_password, database=db_name, secure=True, verify=False)
 
 
 def init_db(client, db_name):
