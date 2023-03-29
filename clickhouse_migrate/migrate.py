@@ -72,7 +72,7 @@ def pipelined(client, migration_script, db_name, timeout=60*60):
 
 
 def create_db(db_name, db_host, db_user, db_password, db_port=None):
-  client = Client(db_host, port=db_port, user=db_user, password=db_password)
+  client = Client(db_host, port=db_port, user=db_user, password=db_password, secure=True, verify=False)
   client.execute(f"CREATE DATABASE IF NOT EXISTS {db_name}")
   client.disconnect()
 
